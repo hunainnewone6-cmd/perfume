@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Néra — Haute Parfumerie</title>
+<meta name="description" content="Maison Néra — an independent house of haute parfumerie. Exceptional ingredients, composed into fragrances created to become your signature.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2313110F'/%3E%3Cpath d='M16 6 L25 16 L16 26 L7 16 Z' fill='none' stroke='%23B3975B' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= SITE TOP ================= -->
+<div class="site-top" id="siteTop">
+  <div class="announce">Complimentary shipping on orders over $150</div>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Maison Néra — home">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html#collections">Collections</a>
+      <a href="index.html#house">Our Story</a>
+      <a href="index.html#journal">Journal</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" data-search aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      </button>
+      <button class="icon-btn" data-cart aria-label="Open shopping bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 4 8v13h16V8l-2-6H6z"></path><path d="M4 8h16"></path><path d="M15.5 11a3.5 3.5 0 0 1-7 0"></path></svg>
+        <span class="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="icon-btn burger" data-menu aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+</div>
+
+<!-- ================= MOBILE MENU ================= -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="icon-btn mobile-close" data-close aria-label="Close menu">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"></path></svg>
+  </button>
+  <a class="menu-link" href="shop.html">Shop</a>
+  <a class="menu-link" href="shop.html#collections">Collections</a>
+  <a class="menu-link" href="index.html#house">Our Story</a>
+  <a class="menu-link" href="index.html#journal">Journal</a>
+  <a class="menu-link" href="index.html#contact">Contact</a>
+  <a class="menu-link" data-search href="#">Search</a>
+  <div class="mobile-social"><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></div>
+</nav>
+
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-media"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2200&auto=format&fit=crop" alt="Nuit Dorée eau de parfum in golden light"></div>
+    <div class="hero-content">
+      <span class="hero-kicker" data-hero="1">Haute Parfumerie &mdash; Est. MMXXIV</span>
+      <h1 data-hero="2">The Art of an <em>Unforgettable</em> Scent</h1>
+      <p class="hero-sub" data-hero="3">Crafted with exceptional ingredients. Created to become your signature.</p>
+      <div class="hero-cta" data-hero="4">
+        <a class="btn btn--ghost" href="shop.html">Discover the Collection</a>
+        <a class="btn btn--ghost" href="#house">Explore the House</a>
+      </div>
+    </div>
+    <div class="hero-scroll" data-hero="4">Scroll</div>
+  </section>
+
+  <!-- ================= FEATURED COLLECTION ================= -->
+  <section class="section featured" id="featured">
+    <div class="container">
+      <div class="featured-head reveal">
+        <div class="section-head">
+          <span class="label">The Collection</span>
+          <h2>Fragrances that define <em>a house</em></h2>
+        </div>
+        <a class="link-line" href="shop.html">View the full collection <span class="arrow">&#8594;</span></a>
+      </div>
+      <div class="product-grid" id="featuredGrid"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+
+  <!-- ================= SIGNATURE SCENT ================= -->
+  <section class="split" id="signature">
+    <div class="split-media reveal reveal-left">
+      <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1400&auto=format&fit=crop" alt="Bois Marine eau de parfum, editorial still life">
+    </div>
+    <div class="split-body">
+      <span class="label reveal">The Signature Scent</span>
+      <h2 class="reveal">N&deg; 01 &mdash; <em>Nuit Dor&eacute;e</em></h2>
+      <p class="intro reveal">
+        Our first composition, and the scent around which the house was founded. Nuit Dor&eacute;e opens like
+        the final hour of daylight &mdash; golden, unhurried, entirely magnetic &mdash; and stays long after you
+        have left the room.
+      </p>
+      <div class="notes">
+        <div class="note reveal d1">
+          <h3>Top Notes</h3>
+          <p>Saffron &middot; Calabrian Bergamot</p>
+        </div>
+        <div class="note reveal d2">
+          <h3>Heart Notes</h3>
+          <p>Dark Amber &middot; Orris Butter</p>
+        </div>
+        <div class="note reveal d3">
+          <h3>Base Notes</h3>
+          <p>Smoked Vanilla &middot; Cashmere Woods</p>
+        </div>
+      </div>
+      <div class="split-cta reveal">
+        <button class="btn" data-quick="nuit-doree">Discover N&deg; 01 <span class="arrow">&#8594;</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE HOUSE ================= -->
+  <section class="section house" id="house">
+    <div class="container">
+      <div class="house-grid">
+        <div class="house-copy">
+          <span class="label reveal">The House</span>
+          <h2 class="reveal">Crafted with <em>Intention</em></h2>
+          <p class="body-copy reveal">
+            Every Maison N&eacute;ra fragrance is composed slowly, as an act of attention. Rare materials are
+            selected for their character rather than their fame, blended in small silent batches, and then left
+            to rest until the composition finds its voice &mdash; sometimes for a season, occasionally for a year.
+          </p>
+          <div class="craft reveal">
+            <span class="craft-index">I.</span>
+            <div>
+              <h3>Selection &amp; Sourcing</h3>
+              <p>Materials are chosen from the world&rsquo;s great growing regions and evaluated by nose, not by price list.</p>
+            </div>
+          </div>
+          <div class="craft reveal d1">
+            <span class="craft-index">II.</span>
+            <div>
+              <h3>The Blend</h3>
+              <p>Each formula is composed in our Grasse atelier and tested on skin for weeks before it is accepted.</p>
+            </div>
+          </div>
+          <div class="craft reveal d2">
+            <span class="craft-index">III.</span>
+            <div>
+              <h3>Refinement &amp; Rest</h3>
+              <p>Bottles are macerated in darkness and cold, then refined by hand until the fragrance wears as it was intended.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="house-figure reveal reveal-right d1">
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop" alt="Rare materials of the Néra atelier">
+          <figcaption>L&rsquo;Atelier &mdash; Grasse</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDITORIAL QUOTE ================= -->
+  <section class="quote-banner" id="quote">
+    <div class="quote-media"><img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?q=80&w=2000&auto=format&fit=crop" alt="Still life in the maison"></div>
+    <div class="quote-inner">
+      <hr class="rule rule--gold">
+      <blockquote class="reveal">&ldquo;A fragrance is not simply worn. <em>It is remembered.</em>&rdquo;</blockquote>
+      <footer class="reveal d1">&mdash; Maison N&eacute;ra</footer>
+    </div>
+  </section>
+
+  <!-- ================= JOURNAL ================= -->
+  <section class="section journal" id="journal">
+    <div class="container">
+      <div class="featured-head reveal">
+        <div class="section-head">
+          <span class="label">The Journal</span>
+          <h2>Notes from <em>the house</em></h2>
+        </div>
+        <a class="link-line" href="index.html#journal">Read the journal <span class="arrow">&#8594;</span></a>
+      </div>
+      <div class="journal-grid">
+        <a class="j-post reveal" href="#journal">
+          <div class="j-post-media"><img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?q=80&w=800&auto=format&fit=crop" alt="The language of perfume notes" loading="lazy"></div>
+          <div class="j-meta"><span>Materials</span><span>February 2026</span></div>
+          <h3>The Language of Notes</h3>
+          <p>Why a well-made accord reads like a sentence &mdash; and how we compose with it.</p>
+        </a>
+        <a class="j-post reveal d1" href="#journal">
+          <div class="j-post-media"><img src="https://images.unsplash.com/photo-1619994403073-2cec844b8e63?q=80&w=800&auto=format&fit=crop" alt="A study in amber" loading="lazy"></div>
+          <div class="j-meta"><span>Atelier</span><span>January 2026</span></div>
+          <h3>A Study in Amber</h3>
+          <p>Fourteen ambers, one season of rest, and the making of our golden signature.</p>
+        </a>
+        <a class="j-post reveal d2" href="#journal">
+          <div class="j-post-media"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="The ritual of wearing" loading="lazy"></div>
+          <div class="j-meta"><span>Ritual</span><span>December 2025</span></div>
+          <h3>Wearing Silence</h3>
+          <p>On restraint, sillage, and the confidence of a fragrance worn closely.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">The Experience</span>
+        <h2>Attentions of <em>the maison</em></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M3 7l9-4 9 4"></path><path d="M12 3v17"></path></svg>
+          <h3>Signature Gift Wrapping</h3>
+          <p>Each order arrives in our ivory coffret, hand-wrapped in silk paper and sealed with the N&eacute;ra crest.</p>
+        </div>
+        <div class="service reveal d1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.5-5L17 3.5a2.1 2.1 0 0 1 3 3L8.5 18z"></path><path d="M13 7l4 4"></path></svg>
+          <h3>Personalized Engraving</h3>
+          <p>An initial, a date, a phrase &mdash; engraved by hand into the glass of your bottle, free of charge.</p>
+        </div>
+        <div class="service reveal d2">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l-1.5 4h-7z"></path><path d="M8 7v6l-2 7h12l-2-7V7"></path><path d="M10.5 7v13"></path></svg>
+          <h3>Complimentary Samples</h3>
+          <p>Every order includes three discovery vials, chosen to lead you gently toward your next signature.</p>
+        </div>
+        <div class="service reveal d3">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.5 3 14.5 0 18"></path><path d="M12 3c-3 3.5-3 14.5 0 18"></path></svg>
+          <h3>Worldwide Delivery</h3>
+          <p>Dispatched under seal from our atelier within 48 hours, with complimentary shipping over $150.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="section newsletter" id="world">
+    <div class="container">
+      <div class="newsletter-inner">
+        <span class="label label--after reveal">Private Access</span>
+        <h2 class="reveal">Enter the World of <em>N&eacute;ra</em></h2>
+        <p class="reveal d1">Receive private access to new creations, exclusive collections and stories from the house.</p>
+        <form class="newsletter-form reveal d2" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email address" autocomplete="email">
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-note" id="newsletterSuccess" role="status"></p>
+        <p class="newsletter-note reveal d3">By subscribing you agree to the maison&rsquo;s privacy policy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+        <p>An independent house of haute parfumerie, dedicated to fragrances of uncommon character, composed slowly and kept rare.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">The Collection</a></li>
+          <li><a href="shop.html#collections">For Him</a></li>
+          <li><a href="shop.html#collections">For Her</a></li>
+          <li><a href="shop.html#collections">Discovery Set</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Maison</h3>
+        <ul>
+          <li><a href="index.html#house">Our Story</a></li>
+          <li><a href="index.html#house">The Atelier</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Client Care</h3>
+        <ul>
+          <li><a href="#contact">Shipping &amp; Returns</a></li>
+          <li><a href="#contact">Complimentary Samples</a></li>
+          <li><a href="#contact">Private Consultations</a></li>
+          <li><a href="#contact">Stockists</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Maison N&eacute;ra &mdash; Haute Parfumerie</span>
+      <span>Composed in Grasse &middot; Bottled in France</span>
+      <span>Privacy &middot; Terms</span>
+      <a href="admin" target="_blank" rel="noopener">Atelier Dashboard</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+<!-- Quick view modal -->
+<div class="modal" id="quickView" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal-window" id="quickViewWindow"></div>
+</div>
+
+<!-- Search overlay -->
+<div class="search" id="search" aria-label="Search">
+  <button class="search-close" data-close>Close</button>
+  <div class="search-inner">
+    <span class="search-label">Search the collection</span>
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <input type="search" id="searchInput" placeholder="A fragrance, a note, a family&hellip;" aria-label="Search fragrances">
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping bag">
+  <div class="cart-head">
+    <h2>Your Bag</h2>
+    <button class="icon-btn" data-close aria-label="Close bag">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 4 8v13h16V8l-2-6H6z"></path><path d="M4 8h16"></path></svg>
+      <p>Your bag is empty. May we suggest the collection?</p>
+      <a class="link-line" href="shop.html">Discover the collection <span class="arrow">&#8594;</span></a>
+    </div>
+    <div id="cartList"></div>
+  </div>
+  <div class="cart-foot">
+    <span class="cart-count-label" id="cartCountLabel">0 ITEMS</span>
+    <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0</strong></div>
+    <span class="cart-free" id="cartFree"></span>
+    <button class="btn" data-close>Proceed to Checkout</button>
+    <button class="btn btn--ghost" data-close>Continue Shopping</button>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+</body>
+</html>

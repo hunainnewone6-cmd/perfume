@@ -1,0 +1,17 @@
+{
+  "name": "maison-nera-backend",
+  "version": "1.0.0",
+  "description": "Backend API + admin dashboard for Maison Néra — Node.js + Express + JSON file storage (no database.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["perfume", "ecommerce", "crud", "inventory", "express"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

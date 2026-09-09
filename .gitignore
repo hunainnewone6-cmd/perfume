@@ -1,0 +1,20 @@
+# Dependencies — never commit these
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.suo
+
+# Env secrets (if you add any)
+.env
+.env.*

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Collection — Maison Néra</title>
+<meta name="description" content="Discover the complete haptic collection from Maison Néra — eight eaux de parfum composed in Grasse for him and for her.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2313110F'/%3E%3Cpath d='M16 6 L25 16 L16 26 L7 16 Z' fill='none' stroke='%23B3975B' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="shop-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= SITE TOP ================= -->
+<div class="site-top" id="siteTop">
+  <div class="announce">Complimentary shipping on orders over $150</div>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Maison Néra — home">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html#collections">Collections</a>
+      <a href="index.html#house">Our Story</a>
+      <a href="index.html#journal">Journal</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" data-search aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      </button>
+      <button class="icon-btn" data-cart aria-label="Open shopping bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 4 8v13h16V8l-2-6H6z"></path><path d="M4 8h16"></path><path d="M15.5 11a3.5 3.5 0 0 1-7 0"></path></svg>
+        <span class="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="icon-btn burger" data-menu aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+</div>
+
+<!-- ================= MOBILE MENU ================= -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="icon-btn mobile-close" data-close aria-label="Close menu">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"></path></svg>
+  </button>
+  <a class="menu-link" href="shop.html">Shop</a>
+  <a class="menu-link" href="shop.html#collections">Collections</a>
+  <a class="menu-link" href="index.html#house">Our Story</a>
+  <a class="menu-link" href="index.html#journal">Journal</a>
+  <a class="menu-link" href="index.html#contact">Contact</a>
+  <a class="menu-link" data-search href="#">Search</a>
+  <div class="mobile-social"><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></div>
+</nav>
+
+<main id="main">
+  <!-- ================= COLLECTION HEADER ================= -->
+  <header class="shop-hero reveal">
+    <span class="label label--after">The Collection</span>
+    <h1>THE COLLECTION</h1>
+    <p>Discover fragrances created to leave an unmistakable impression.</p>
+
+    <div class="filters" aria-label="Filter fragrances">
+      <button class="filter is-active" data-filter="All">All</button>
+      <button class="filter" data-filter="For Him">For Him</button>
+      <button class="filter" data-filter="For Her">For Her</button>
+      <button class="filter" data-filter="Fresh">Fresh</button>
+      <button class="filter" data-filter="Woody">Woody</button>
+      <button class="filter" data-filter="Floral">Floral</button>
+      <button class="filter" data-filter="Oriental">Oriental</button>
+    </div>
+  </header>
+
+  <!-- ================= PRODUCT GRID ================= -->
+  <section class="section shop" id="collections" style="padding-top:0">
+    <div class="container">
+      <span class="shop-count" id="shopCount" aria-live="polite"></span>
+      <div class="product-grid" id="shopGrid"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="section newsletter" id="world">
+  <div class="container">
+    <div class="newsletter-inner">
+      <span class="label label--after reveal">Private Access</span>
+      <h2 class="reveal">Enter the World of <em>N&eacute;ra</em></h2>
+      <p class="reveal d1">Receive private access to new creations, exclusive collections and stories from the house.</p>
+      <form class="newsletter-form reveal d2" id="newsletterForm" novalidate>
+        <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email address" autocomplete="email">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note" id="newsletterSuccess" role="status"></p>
+      <p class="newsletter-note reveal d3">By subscribing you agree to the maison&rsquo;s privacy policy. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+        <p>An independent house of haute parfumerie, dedicated to fragrances of uncommon character, composed slowly and kept rare.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">The Collection</a></li>
+          <li><a href="shop.html#collections">For Him</a></li>
+          <li><a href="shop.html#collections">For Her</a></li>
+          <li><a href="shop.html#collections">Discovery Set</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Maison</h3>
+        <ul>
+          <li><a href="index.html#house">Our Story</a></li>
+          <li><a href="index.html#house">The Atelier</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Client Care</h3>
+        <ul>
+          <li><a href="#contact">Shipping &amp; Returns</a></li>
+          <li><a href="#contact">Complimentary Samples</a></li>
+          <li><a href="#contact">Private Consultations</a></li>
+          <li><a href="#contact">Stockists</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Maison N&eacute;ra &mdash; Haute Parfumerie</span>
+      <span>Composed in Grasse &middot; Bottled in France</span>
+      <span>Privacy &middot; Terms</span>
+      <a href="admin" target="_blank" rel="noopener">Atelier Dashboard</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+<!-- Quick view modal -->
+<div class="modal" id="quickView" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal-window" id="quickViewWindow"></div>
+</div>
+
+<!-- Search overlay -->
+<div class="search" id="search" aria-label="Search">
+  <button class="search-close" data-close>Close</button>
+  <div class="search-inner">
+    <span class="search-label">Search the collection</span>
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+      <input type="search" id="searchInput" placeholder="A fragrance, a note, a family&hellip;" aria-label="Search fragrances">
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping bag">
+  <div class="cart-head">
+    <h2>Your Bag</h2>
+    <button class="icon-btn" data-close aria-label="Close bag">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 4 8v13h16V8l-2-6H6z"></path><path d="M4 8h16"></path></svg>
+      <p>Your bag is empty. May we suggest the collection?</p>
+      <a class="link-line" href="shop.html">Discover the collection <span class="arrow">&#8594;</span></a>
+    </div>
+    <div id="cartList"></div>
+  </div>
+  <div class="cart-foot">
+    <span class="cart-count-label" id="cartCountLabel">0 ITEMS</span>
+    <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0</strong></div>
+    <span class="cart-free" id="cartFree"></span>
+    <button class="btn" data-close>Proceed to Checkout</button>
+    <button class="btn btn--ghost" data-close>Continue Shopping</button>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+</body>
+</html>

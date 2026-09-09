@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Dashboard — Maison Néra</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2313110F'/%3E%3Cpath d='M16 6 L25 16 L16 26 L7 16 Z' fill='none' stroke='%23B3975B' stroke-width='1.4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ================= LOGIN GATE ================= -->
+  <div class="login-view" id="loginView">
+    <form class="login-card" id="loginForm" novalidate>
+      <a class="logo" href="index.html" aria-label="Maison Néra — home">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+      <span class="label label--center">Atelier Dashboard</span>
+      <p class="login-note">Enter the password to tend the collection.</p>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" required>
+      </label>
+      <p class="login-error" id="loginError" role="alert"></p>
+      <button type="submit" class="btn btn--gold btn--block">Enter the Atelier</button>
+      <a class="login-back" href="index.html">← Back to the storefront</a>
+    </form>
+  </div>
+
+  <!-- ================= DASHBOARD ================= -->
+  <div class="admin-app hidden" id="appView">
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <a class="logo" href="index.html">Maison <span class="logo-dot">&#9670;</span> N&eacute;ra</a>
+          <span class="brand-sub">Atelier Dashboard &mdash; Inventory</span>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn--ghost btn--small" href="../index.html">View Store</a>
+          <button class="btn btn--ghost btn--small" id="logoutBtn" type="button">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- Stats -->
+      <section class="stats" aria-label="Inventory summary">
+        <div class="stat">
+          <span class="stat-num" id="statTotal">—</span>
+          <span class="stat-label">Fragrances</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statBottles">—</span>
+          <span class="stat-label">Bottles in Stock</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statLow">—</span>
+          <span class="stat-label">Low Stock (&lt;10)</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statValue">—</span>
+          <span class="stat-label">Inventory Value</span>
+        </div>
+      </section>
+
+      <!-- Toolbar -->
+      <section class="toolbar">
+        <input type="search" id="searchInput" placeholder="Search name, family, notes&hellip;" aria-label="Search fragrances">
+        <select id="familyFilter" aria-label="Filter by family">
+          <option value="">All Families</option>
+          <option>Oriental</option>
+          <option>Fresh</option>
+          <option>Floral</option>
+          <option>Woody</option>
+        </select>
+        <button class="btn btn--gold" id="addBtn" type="button">+ Add Fragrance</button>
+      </section>
+
+      <!-- Table -->
+      <section class="card">
+        <table class="inventory">
+          <thead>
+            <tr>
+              <th>Fragrance</th>
+              <th>Family</th>
+              <th>Gender</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th class="th-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productBody">
+            <tr><td colspan="7" class="state-msg">Loading&hellip;</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL (ADD / EDIT) ================= -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modalTitle">Add Fragrance</h2>
+        <button class="modal-x" id="cancelBtn" type="button" aria-label="Close">&times;</button>
+      </div>
+      <form id="productForm" novalidate>
+        <div class="form-grid">
+          <label class="field">
+            <span>Name *</span>
+            <input id="name" type="text" placeholder="e.g. Cuir Sauvage" required>
+          </label>
+          <label class="field">
+            <span>Code</span>
+            <input id="code" type="text" placeholder="e.g. N° 09">
+          </label>
+          <label class="field">
+            <span>Price (USD) *</span>
+            <input id="price" type="number" min="0" step="1" placeholder="0" required>
+          </label>
+          <label class="field">
+            <span>Stock *</span>
+            <input id="stock" type="number" min="0" step="1" placeholder="0" required>
+          </label>
+          <label class="field">
+            <span>Family</span>
+            <select id="family">
+              <option>Oriental</option>
+              <option>Fresh</option>
+              <option>Floral</option>
+              <option>Woody</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Gender</span>
+            <select id="gender">
+              <option>For Her</option>
+              <option>For Him</option>
+              <option>Unisex</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Image (Unsplash photo ID, e.g. 1541643600914-78b084683601)</span>
+          <input id="img" type="text" placeholder="Unsplash photo id">
+        </label>
+        <label class="field">
+          <span>Description</span>
+          <textarea id="desc" rows="2" placeholder="A short description of the fragrance&hellip;"></textarea>
+        </label>
+        <div class="form-grid form-grid--3">
+          <label class="field">
+            <span>Top Notes</span>
+            <input id="top" type="text" placeholder="Saffron · Bergamot">
+          </label>
+          <label class="field">
+            <span>Heart Notes</span>
+            <input id="heart" type="text" placeholder="Dark Amber · Orris">
+          </label>
+          <label class="field">
+            <span>Base Notes</span>
+            <input id="base" type="text" placeholder="Vanilla · Cashmere Woods">
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn--ghost-dark" id="cancelBtn2">Cancel</button>
+          <button type="submit" class="btn btn--gold">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
