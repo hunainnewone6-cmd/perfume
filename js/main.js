@@ -133,7 +133,7 @@ function observeReveals(scope) {
 const siteTop = $('#siteTop');
 const header = $('.header');
 const quoteImg = $('.quote-media img');
-const heroImg = $('.hero-media img');
+const heroMedia = $('.hero-media');
 let ticking = false;
 
 function parallax() {
@@ -148,8 +148,8 @@ function parallax() {
         quoteImg.style.transform = `translateY(${pct * -46}px) scale(1.1)`;
       }
     }
-    if (heroImg && window.scrollY < innerHeight) {
-      heroImg.parentElement.style.transform = `translateY(${window.scrollY * 0.16}px)`;
+    if (heroMedia && window.scrollY < innerHeight) {
+      heroMedia.style.backgroundPosition = `50% ${window.scrollY * 0.16}px`;
     }
     ticking = false;
   });
