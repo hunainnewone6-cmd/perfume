@@ -506,14 +506,14 @@ fetchProducts(); // refresh with live inventory from the backend (admin edits ap
   if (reduceMotion.matches) { reveal(); return; }
 
   const startedAt = performance.now();
-  const MIN_SHOW_MS = 1200; // long enough to read the logo, short enough to feel crisp
+  const MIN_SHOW_MS = 1750; // 1.75s — logo reads, then gently fades away
 
   function finish() {
     window.setTimeout(reveal, Math.max(0, MIN_SHOW_MS - (performance.now() - startedAt)));
   }
 
   window.addEventListener('load', finish, { once: true }); // wait for images/assets
-  window.setTimeout(finish, 2600);                         // hard cap — never traps the user
+  window.setTimeout(finish, 3600);                         // hard cap — never traps the user
   window.addEventListener('pageshow', (e) => { if (e.persisted) finish(); });
 
   // Esc always lets the visitor in immediately

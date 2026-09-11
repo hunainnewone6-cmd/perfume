@@ -148,7 +148,11 @@ a:hover .arrow, .btn:hover .arrow { transform: translateX(6px); }
   width: clamp(34px, 4.6vw, 46px);
   height: clamp(34px, 4.6vw, 46px);
   object-fit: contain;
+  filter: invert(1);              /* ivory mark over the dark hero */
+  transition: filter .45s var(--ease);
 }
+.header.is-solid .logo-img,
+body.shop-page .logo-img { filter: invert(0); } /* ink mark over the cream header */
 
 .nav-desktop { display: flex; gap: clamp(1rem, 2.2vw, 2.4rem); }
 .nav-desktop a {
@@ -213,44 +217,66 @@ a:hover .arrow, .btn:hover .arrow { transform: translateX(6px); }
   font-size: .64rem; letter-spacing: .26em; text-transform: uppercase; color: var(--champagne);
 }
 /* ============================================================
-   PRELOADER — opening logo reveal
+   PRELOADER — opening logo reveal (white & gold)
    ============================================================ */
 .opener {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  background: radial-gradient(120% 120% at 50% 38%, #241F18 0%, var(--espresso) 52%, #14100B 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FCFAF4 42%, #F4EEE1 100%);
   opacity: 1; visibility: visible;
   transition: opacity .6s var(--ease), transform .7s var(--ease), visibility .7s;
   will-change: opacity, transform;
 }
 .opener::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(52% 42% at 50% 50%, rgba(179,151,91,.10), transparent 70%);
+  background: radial-gradient(46% 40% at 50% 44%, rgba(179,151,91,.16), transparent 70%);
 }
 .opener-inner {
-  position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.4rem;
-  animation: openerIn .55s var(--ease) both;
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  animation: openerIn .5s var(--ease) both;
 }
 .opener-logo {
-  display: block;
+  position: relative; flex: none; overflow: hidden;
   width: clamp(84px, 13vw, 128px);
   height: clamp(84px, 13vw, 128px);
+}
+.opener-logo img {
+  display: block; width: 100%; height: 100%;
   object-fit: contain;
-  animation: openerPop .72s var(--ease) both;
+  animation:
+    openerPop  .68s var(--ease) both,
+    openerDrop .5s  var(--ease) 1.35s forwards;
+}
+.opener-sweep {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 70%;
+  pointer-events: none;
+  background: linear-gradient(100deg,
+    rgba(211,180,120,0)   0%,
+    rgba(211,180,120,.14) 34%,
+    rgba(216,180,105,.30) 50%,
+    rgba(211,180,120,.14) 66%,
+    rgba(211,180,120,0) 100%);
+  transform: translateX(-160%);
+  animation: openerSweep 1.05s var(--ease) .5s forwards;
 }
 .opener-inner::after {
   content: ""; width: 58px; height: 1px; background: var(--gold);
-  transform: scaleX(0); animation: openerLine .55s var(--ease) .5s forwards;
+  transform: scaleX(0); animation: openerLine .55s var(--ease) .55s forwards;
 }
 .opener.is-done {
-  opacity: 0; transform: translateY(-22px);
+  opacity: 0; transform: translateY(-20px);
   visibility: hidden; pointer-events: none;
 }
 @keyframes openerIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes openerPop {
-  from { opacity: 0; transform: translateY(12px) scale(.9); }
+  from { opacity: 0; transform: translateY(10px) scale(.92); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
+@keyframes openerDrop {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(1.03); }
+}
+@keyframes openerSweep { to { transform: translateX(230%); } }
 @keyframes openerLine { to { transform: scaleX(1); } }
 
 body.opener-lock { overflow: hidden; }
