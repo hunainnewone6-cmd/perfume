@@ -481,3 +481,45 @@ observeReveals(document);
 window.addEventListener('load', onScroll);
 onScroll();
 fetchProducts(); // refresh with live inventory from the backend (admin edits appear here)
+/* ============================================================
+   INTRO — opening logo reveal
+   A short, luxurious brand opener: the house logo fades and
+   scales in, then the overlay lifts away to reveal the page.
+   Honours prefers-reduced-motion and never traps the visitor.
+   ============================================================ */
+(function () {
+  const opener = document.getElementById('opener');
+  if (!opener) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let revealed = false;
+
+  document.body.classList.add('opener-lock'); // hold scroll during the brief reveal
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    document.body.classList.remove('opener-lock');
+    opener.classList.add('is-done');
+    window.setTimeout(() => opener.remove(), 900);
+  }
+
+  if (reduceMotion.matches) { reveal(); return; }
+
+  const startedAt = performance.now();
+  const MIN_SHOW_MS = 1200; // long enough to read the logo, short enough to feel crisp
+
+  function finish() {
+    window.setTimeout(reveal, Math.max(0, MIN_SHOW_MS - (performance.now() - startedAt)));
+  }
+
+  window.addEventListener('load', finish, { once: true }); // wait for images/assets
+  window.setTimeout(finish, 2600);                         // hard cap — never traps the user
+  window.addEventListener('pageshow', (e) => { if (e.persisted) finish(); });
+
+  // Esc always lets the visitor in immediately
+  document.addEventListener('keydown', function onKey(e) {
+    if (e.key !== 'Escape') return;
+    document.removeEventListener('keydown', onKey);
+    finish();
+  });
+})();
